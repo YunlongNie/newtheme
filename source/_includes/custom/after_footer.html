@@ -1,0 +1,22 @@
+<a href="#" id="dynamic_to_top" style="display: none;">UP</a>
+<script type="text/javascript">
+(function () {
+	var dynamic_to_top = $('#dynamic_to_top'),scrollHeight = 0;
+	window.onscroll = function() {
+		if (navigator.userAgent.indexOf('MSIE') >= 0) 
+			scrollHeight = document.documentElement.scrollTop;	
+		else 
+			scrollHeight = document.body.scrollTop;			
+		if (scrollHeight > 700) {
+			dynamic_to_top.fadeIn(500);
+		}
+		else{
+			dynamic_to_top.fadeOut(500);
+		}
+	};
+	dynamic_to_top.click(function(){	
+		$('html, body').stop().animate({scrollTop: 0}, 400);
+		return false;
+	});
+})();	
+</script>
